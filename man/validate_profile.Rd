@@ -2,9 +2,12 @@
 % Please edit documentation in R/api.R
 \name{validate_profile}
 \alias{validate_profile}
+\alias{dm_from_profile}
 \title{Definition of the profile data format}
 \usage{
 validate_profile(x)
+
+dm_from_profile(x)
 }
 \arguments{
 \item{x}{Profile data, e.g., as returned by \code{\link[=read_pprof]{read_pprof()}} or \code{\link[=read_rprof]{read_rprof()}}.}
@@ -16,6 +19,10 @@ In case of major updates, compatibility functions will be provided.
 The \code{validate_profile()} function checks a profile data object
 for compatibility with the specification.
 Versioning information embedded in the data is considered.
+
+The \code{dm_from_profile()} function converts a profile to a dm object.
+The \pkg{dm} package must be installed.
+See \code{\link[dm:dm]{dm::dm()}} for more information.
 }
 \details{
 The profile data is stored in an object of class \code{"profile_data"},
@@ -88,6 +95,14 @@ source file, zero if unknown. All values must be nonnegative.
 rprof_file <- system.file("samples/rprof/1.out", package = "profile")
 ds <- read_rprof(rprof_file)
 validate_profile(ds)
-ds$samples <- NULL
-try(validate_profile(ds))
+
+bad_ds <- ds
+bad_ds$samples <- NULL
+try(validate_profile(bad_ds))
+
+if (rlang::is_installed("dm")) {
+  dm <- dm_from_profile(ds)
+  print(dm)
+  dm::dm_draw(dm)
+}
 }

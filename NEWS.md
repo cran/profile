@@ -1,3 +1,8 @@
+# profile 1.0.2
+
+- New `dm_from_profile()` (#10).
+
+
 # profile 1.0.1
 
 - `?read_pprof` uses example conditional on availability of RProtoBuf.
