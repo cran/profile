@@ -1,3 +1,16 @@
+<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+
+# profile 1.0.3
+
+## Chore
+
+- Adapt to rlang >= 1.0.0.
+
+- Switch to GitHub Actions (#12).
+
+- Require tibble 3.0.0 (#11).
+
+
 # profile 1.0.2
 
 - New `dm_from_profile()` (#10).
