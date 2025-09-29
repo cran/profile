@@ -1,4 +1,15 @@
-<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
+
+# profile 1.0.4
+
+## Chore
+
+- Fix test (#17).
+
+- Fix `dm_from_profile()`.
+
+- Use testthat edition 3.
+
 
 # profile 1.0.3
 
